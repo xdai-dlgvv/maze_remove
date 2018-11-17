@@ -39,7 +39,7 @@ for i in range(height):
         Ij = np.mat(patch) - np.repeat(np.mat(miu), wk, axis=0)
         # delta = np.var(patch)
         delta = np.mat(np.cov(patch.T))
-        epsilon = 0.0001 #  ？？？？？
+        epsilon = 0.0001
         U3 = np.mat(np.eye(3))
         V = (delta + epsilon/wk*U3).I
         L[i, j] = 1 - 1 - 1 / wk * np.trace(Ii * V * Ij.T)
