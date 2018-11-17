@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 im = cv2.imread('2.jpg')
-# im = cv2.imread('3.png')
 im = np.asarray(im, dtype=np.float)
 patch_size = (7 - 1) // 2
 t0 = 0.1
