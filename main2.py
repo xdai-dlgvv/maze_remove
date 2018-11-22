@@ -24,6 +24,7 @@ height, width, channel = np.shape(im)
 #         patch = im[max(i - patch_size, 0):min(i + patch_size, height),
 #                 max(j - patch_size, 0):min(j + patch_size, width), :]
 #         j_dark[i, j] = np.min(patch)
+a = ImageFilter.MinFilter(filter_size)
 j_dark = np.array(Image.fromarray(np.min(im, axis=2)).filter(ImageFilter.MinFilter(filter_size)))
 
 dark_channel_list = np.sort(np.reshape(j_dark, (-1, 1)))
